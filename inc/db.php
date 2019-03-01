@@ -51,13 +51,13 @@ $qstr = "
 BEGIN;
     CREATE TABLE users
     (
-        id INTEGER PRIMARY KEY NOY NULL,
+        id INTEGER PRIMARY KEY NOT NULL,
         login CHAR(20) UNIQUE NOT NULL,
         haslo CHAR(50) NOT NULL,
         email CHAR(50) UNIQUE NOT NULL,
         datad INT NOT NULL
     );
-    INSERT INTO users VALUES (NULL,'admin', '".sha1()."', 'admin@home.net', ".time().");
+    INSERT INTO users VALUES (NULL,'admin', '".sha1('haslo')."', 'admin@home.net', ".time().");
 COMMIT;
 ";
 
